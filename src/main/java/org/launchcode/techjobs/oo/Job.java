@@ -46,7 +46,7 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id);
     }
-    public String isValidInput(String aString){
+    private static String isValidInput(String aString){
         if (aString.isEmpty()) {
             return "Data not available";
         } else {
@@ -56,7 +56,7 @@ public class Job {
 
     @Override
     public String toString() {
-        if ((name == null) || (employer == null) || (location == null) || (positionType == null) || (coreCompetency == null)) {
+        if ((name == null) && (employer == null) && (location == null) && (positionType == null) && (coreCompetency == null)) {
             return "OOPS! This job does not seem to exist.";
         } else {
             return System.lineSeparator() +
